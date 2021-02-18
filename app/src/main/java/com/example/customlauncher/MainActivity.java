@@ -31,8 +31,13 @@ public class MainActivity extends AppCompatActivity {
         return resolveInfo.loadIcon(pm);
     }
 
-    public void onChromeButtonClick(View v) {
+    public void onChromeButtonClick(View v) { // 바탕화면의 크롬 아이콘 클릭
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.chrome");
+        startActivity(launchIntent);
+    }
+
+    public void onAppsButtonClick(View v) { // 메뉴(앱 목록) 버튼 클릭
+        Intent launchIntent = new Intent(getApplicationContext(), AppsDrawer.class);
         startActivity(launchIntent);
     }
 }
