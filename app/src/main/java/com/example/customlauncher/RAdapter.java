@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
-    ArrayList<AppInfo> appsList;
+    public ArrayList<AppInfo> appsList;
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public ConstraintLayout row;
@@ -54,7 +55,10 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
     public RAdapter(Context c) {
         // This is where build our list of app details, using the app
         // object we created to store the label, package name and icon
-        PackageManager pm = c.getPackageManager();
+
+        appsList = new ArrayList<>();
+
+        /*PackageManager pm = c.getPackageManager();
         appsList = new ArrayList<AppInfo>();
 
         Intent i = new Intent(Intent.ACTION_MAIN, null);
@@ -67,8 +71,13 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
             app.packageName = ri.activityInfo.packageName;
             app.icon = ri.activityInfo.loadIcon(pm);
             appsList.add(app);
-        }
+        }*/
     }
+
+    public void addApp(AppInfo app) {
+        appsList.add(app);
+    }
+
     
     @Override
     public void onBindViewHolder(RAdapter.ViewHolder viewHolder, int i) {
@@ -103,6 +112,7 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
+
 
     
 }

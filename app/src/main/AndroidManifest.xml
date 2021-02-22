@@ -21,8 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AppsDrawer">
-
+        <activity android:name=".AppsDrawer"
+            android:launchMode="singleTask">
         </activity>
     </application>
 

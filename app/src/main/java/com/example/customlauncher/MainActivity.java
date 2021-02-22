@@ -14,30 +14,48 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static Context baseContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        baseContext = getBaseContext();
 
-        ImageView chromeIcon = (ImageView)findViewById(R.id.chromeButton);
-        chromeIcon.setImageDrawable(getActivityIcon(this,"com.android.chrome", "com.google.android.apps.chrome.Main"));
+        /*ImageView chromeIcon = (ImageView)findViewById(R.id.chromeButton);
+        chromeIcon.setImageDrawable(getActivityIcon(this,"com.android.chrome", "com.google.android.apps.chrome.Main"));*/
     }
 
-    public Drawable getActivityIcon(Context context, String packageName, String activityName) {
+    public static Drawable getActivityIcon(Context context, String packageName, String activityName) {
         PackageManager pm = context.getPackageManager();
         Intent intent = new Intent();
         intent.setComponent(new ComponentName(packageName, activityName));
         ResolveInfo resolveInfo = pm.resolveActivity(intent, 0);
+
         return resolveInfo.loadIcon(pm);
     }
 
-    public void onChromeButtonClick(View v) { // 바탕화면의 크롬 아이콘 클릭
+    public void openDrawerClick(View v) {
+        openDrawer();
+    }
+
+    private void openDrawer() {
+        Intent intent = new Intent(this, AppsDrawer.class);
+        startActivity(intent);
+    }
+
+
+    /*public void onChromeButtonClick(View v) { // 바탕화면의 크롬 아이콘 클릭
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.chrome");
         startActivity(launchIntent);
-    }
+    }*/
 
     public void onAppsButtonClick(View v) { // 메뉴(앱 목록) 버튼 클릭
         Intent launchIntent = new Intent(getApplicationContext(), AppsDrawer.class);
         startActivity(launchIntent);
     }
+
+
+
+
 }
