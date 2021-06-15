@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.customlauncher">
+    package="com.example.mybomlauncher">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- android:theme="@style/Theme.CustomLauncher" -->
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.mybomlauncher.MainActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="sensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AppsDrawer"
+        <activity android:name="com.example.mybomlauncher.AppsDrawer"
             android:launchMode="singleTask">
         </activity>
     </application>

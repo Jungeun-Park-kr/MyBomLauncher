@@ -1,4 +1,4 @@
-package com.example.customlauncher;
+package com.example.mybomlauncher;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -77,6 +77,31 @@ public class Homescreen extends Fragment implements View.OnClickListener{
                 Intent launchIntent = MainActivity.baseContext.getPackageManager().getLaunchIntentForPackage("com.android.chrome");
                 startActivity(launchIntent);
                 Log.d("MyTAG", "chrome버튼 클릭");
+                break;
+            
+            case R.id.cameraButton: // 일반 안드로이드 카메라
+                Intent camera = MainActivity.baseContext.getPackageManager().getLaunchIntentForPackage("com.sec.android.app.camera");
+                startActivity(camera);
+                break;
+            /*case R.id.cameraButton: // 클로이 카메라 
+                Intent camera = MainActivity.baseContext.getPackageManager().getLaunchIntentForPackage("org.codeaurora.snapcam");
+                startActivity(camera);
+                break;*/
+                
+
+            case R.id.galleryButton:
+                Intent gallery = MainActivity.baseContext.getPackageManager().getLaunchIntentForPackage("com.sec.android.gallery3d");
+                startActivity(gallery);
+                break;
+
+            case R.id.settingButton:
+                Intent setting = MainActivity.baseContext.getPackageManager().getLaunchIntentForPackage("com.android.settings");
+                startActivity(setting);
+                break;
+
+            case R.id.mybomButton: // 마이봄 앱 (테스트용 - 아직 클로이앱 없으니 테스트용으로 RobotPlatform 앱)
+                Intent mybom = MainActivity.baseContext.getPackageManager().getLaunchIntentForPackage("com.lge.robot.rptestapp");
+                startActivity(mybom);
                 break;
         }
     }
