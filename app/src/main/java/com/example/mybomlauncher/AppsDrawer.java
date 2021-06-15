@@ -1,10 +1,11 @@
-package com.example.customlauncher;
+package com.example.mybomlauncher;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,12 +44,18 @@ public class AppsDrawer extends AppCompatActivity {
             i.addCategory(Intent.CATEGORY_LAUNCHER);
 
             List<ResolveInfo> allApps = pm.queryIntentActivities(i, 0);
-            for(ResolveInfo ri:allApps) {
-                AppInfo app = new AppInfo();
-                app.label = ri.loadLabel(pm);
-                app.packageName = ri.activityInfo.packageName;
-                app.icon = ri.activityInfo.loadIcon(pm);
-                radapter.addApp(app);
+            for(ResolveInfo ri:allApps) { // 필요한 앱만 거르기
+                if (ri.loadLabel(pm).equals("갤러리") || ri.loadLabel(pm).equals("카메라") || ri.loadLabel(pm).equals("Snapdragon 카메라") || ri.loadLabel(pm).equals("설정")) {
+                    AppInfo app = new AppInfo();
+                    app.label = ri.loadLabel(pm);
+                    app.packageName = ri.activityInfo.packageName;
+                    app.icon = ri.activityInfo.loadIcon(pm);
+                    Log.i("MyTag)", "앱 이름: "+app.label+", 패키지 이름: "+app.packageName+", 타겟 액티비티: "+ri.activityInfo.targetActivity+", 부모 액티비티 :"+ri.activityInfo.parentActivityName);
+
+                    radapter.addApp(app);
+                } else {
+                    continue;
+                }
             }
             return "Success";
         }

@@ -1,4 +1,4 @@
-package com.example.customlauncher;
+package com.example.mybomlauncher;
 
 import android.graphics.drawable.Drawable;
 

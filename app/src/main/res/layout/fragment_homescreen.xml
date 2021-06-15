@@ -17,5 +17,35 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal" />
 
+    <ImageView
+        android:id="@+id/mybomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="30dp"/>
+
+    <ImageView
+        android:id="@+id/settingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="60dp"
+        />
+
+    <ImageView
+        android:id="@+id/cameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="90dp"
+        />
+
+    <ImageView
+        android:id="@+id/galleryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="1200dp"
+        />
 
 </FrameLayout>
