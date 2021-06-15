@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         baseContext = getBaseContext();
 
-
         // CLOi 용
         ImageView mybomcameraIcon = (ImageView)findViewById(R.id.cameraButton); // myBom에 설치된 Snapdragon 카메라
         mybomcameraIcon.setImageDrawable(getActivityIcon(this,"org.codeaurora.snapcam", null));
