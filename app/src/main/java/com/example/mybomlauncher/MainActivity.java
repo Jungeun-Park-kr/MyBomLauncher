@@ -88,9 +88,42 @@ public class MainActivity extends AppCompatActivity {
         startActivity(launchIntent);
     }
 
-    public void getMybomApps(View v) {
-
+    // CLOi용
+    public void onGalleryButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.gallery3d");
+        startActivity(launchIntent);
     }
+    public void onCameraButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("org.codeaurora.snapcam");
+        startActivity(launchIntent);
+    }
+    public void onSettingButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
+        startActivity(launchIntent);
+    }
+    public void onMyBomButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.lge.robot.rptestapp");
+        startActivity(launchIntent);
+    }
+
+    // Android 폰 테스트용
+    /*public void onGalleryButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.sec.android.gallery3d");
+        startActivity(launchIntent);
+    }
+    public void onCameraButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.camera");
+        startActivity(launchIntent);
+    }
+    public void onSettingButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
+        startActivity(launchIntent);
+    }
+    public void onMyBomButtonClick(View v) {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.chrome");
+        startActivity(launchIntent);
+    }*/
+
 
 
 }
