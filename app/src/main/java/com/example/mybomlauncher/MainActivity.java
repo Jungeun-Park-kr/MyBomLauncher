@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView galleryIcon = (ImageView)findViewById(R.id.galleryButton);
         galleryIcon.setImageDrawable(getActivityIcon(this,"com.android.gallery3d", null ));
         ImageView settingIcon = (ImageView)findViewById(R.id.settingButton);
-        settingIcon.setImageDrawable(getActivityIcon(this,"com.android.settings", "com.android.settings.Settings"));
+        //settingIcon.setImageDrawable(getActivityIcon(this,"com.android.settings", "com.android.settings.Settings")); // MyBom에 설치된 기본 설정앱
+        settingIcon.setImageDrawable(getActivityIcon(this,"com.example.mybomsettings", "com.example.mybomsettings.MainActivity")); // 직접 구현한 MyBom 설정앱
         ImageView mybomIcon = (ImageView)findViewById(R.id.mybomButton); // 아직 클로이앱 없으니 테스트용으로 RobotPlatform 앱
         mybomIcon.setImageDrawable(getActivityIcon(this,"com.lge.robot.rptestapp", null));
 
@@ -39,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
         cameraIcon.setImageDrawable(getActivityIcon(this,"com.sec.android.app.camera", null));
         ImageView galleryIcon = (ImageView)findViewById(R.id.galleryButton);
         galleryIcon.setImageDrawable(getActivityIcon(this,"com.sec.android.gallery3d", null ));
-        ImageView settingIcon = (ImageView)findViewById(R.id.settingButton);
-        settingIcon.setImageDrawable(getActivityIcon(this,"com.android.settings", "com.android.settings.Settings"));
+        ImageView settingIcon = (ImageView)findViewById(R.id.settingButton); // MyBom 설정앱
+        settingIcon.setImageDrawable(getActivityIcon(this,"com.example.mybomsettings", "com.example.mybomsettings.MainActivity"));  // 직접 구현한 MyBom 설정앱
+        //settingIcon.setImageDrawable(getActivityIcon(this,"com.example.mybomsettings", "com.android.settings.Settings")); // 기본 설치된 설정앱
         ImageView chromeIcon = (ImageView)findViewById(R.id.mybomButton); // 테스트 용으로 mybom 앱 자리에 크롬
         chromeIcon.setImageDrawable(getActivityIcon(this,"com.android.chrome", "com.google.android.apps.chrome.Main"));*/
     }
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         return resolveInfo.loadIcon(pm);
     }
 
-    public void openDrawerClick(View v) {
+    public void openDrawerClick(View v) { // 메뉴 버튼 누를 경우 리스트 형태로 앱 목록
         openDrawer();
     }
 
@@ -77,11 +79,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public void onChromeButtonClick(View v) { // 바탕화면의 크롬 아이콘 클릭
-        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.chrome");
-        startActivity(launchIntent);
-    }
 
     public void onAppsButtonClick(View v) { // 메뉴(앱 목록) 버튼 클릭
         Intent launchIntent = new Intent(getApplicationContext(), AppsDrawer.class);
@@ -98,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(launchIntent);
     }
     public void onSettingButtonClick(View v) {
-        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
+        // Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings"); // LG CLOi 기존 설정앱
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.mybomsettings"); // MyBom 전용 설정앱
         startActivity(launchIntent);
     }
     public void onMyBomButtonClick(View v) {
@@ -116,10 +114,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(launchIntent);
     }
     public void onSettingButtonClick(View v) {
-        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings");
+        //Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.settings"); // Android 기본 설정앱
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.mybomsettings"); // MyBom 전용 설정앱
         startActivity(launchIntent);
     }
-    public void onMyBomButtonClick(View v) {
+    public void onMyBomButtonClick(View v) { // 안드로이드에서는 MyBom 자체 앱 대신 크롬으로 테스트
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.chrome");
         startActivity(launchIntent);
     }*/
