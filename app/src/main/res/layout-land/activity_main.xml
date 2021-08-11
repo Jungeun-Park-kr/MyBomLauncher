@@ -8,49 +8,92 @@
 
     <ImageView
         android:id="@+id/mybomButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="MyBom App Icon"
         android:onClick="onMyBomButtonClick"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/mybomTextView"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="마이봄"
+        app:layout_constraintTop_toBottomOf="@id/mybomButton"
+        app:layout_constraintStart_toStartOf="@id/mybomButton"/>
 
     <ImageView
         android:id="@+id/settingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
         android:layout_marginRight="100dp"
+        android:layout_marginEnd="100dp"
         android:contentDescription="Settings App Icon"
         android:onClick="onSettingButtonClick"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/settingTextView"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="설정"
+        app:layout_constraintTop_toBottomOf="@id/settingButton"
+        app:layout_constraintStart_toStartOf="@id/settingButton"/>
 
     <ImageView
         android:id="@+id/cameraButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:onClick="onCameraButtonClick"
-        android:contentDescription="Camera App Icon"/>
+        android:contentDescription="Camera App Icon" />
+    <TextView
+        android:id="@+id/cameraTextView"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="카메라"
+        app:layout_constraintTop_toBottomOf="@id/cameraButton"
+        app:layout_constraintStart_toStartOf="@id/cameraButton"/>
 
     <ImageView
         android:id="@+id/galleryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginRight="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="90dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="100dp"
         android:onClick="onGalleryButtonClick"
-        android:contentDescription="Gallery App Icon"/>
+        android:contentDescription="Gallery App Icon" />
+
+    <TextView
+        android:id="@+id/galleryTextView"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="갤러리"
+        app:layout_constraintTop_toBottomOf="@id/galleryButton"
+        app:layout_constraintStart_toStartOf="@id/galleryButton"/>
 
 
     <ImageView
