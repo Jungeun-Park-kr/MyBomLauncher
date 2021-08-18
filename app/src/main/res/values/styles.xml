@@ -9,6 +9,9 @@
         <!--   아래 두 줄 : 런처처럼 만들어줌 (Wallpaper, 배경투명)   -->
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+        <!--   아래 두 줄 : 타이틀바 제거     -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>
