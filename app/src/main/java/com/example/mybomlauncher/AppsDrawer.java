@@ -45,7 +45,9 @@ public class AppsDrawer extends AppCompatActivity {
 
             List<ResolveInfo> allApps = pm.queryIntentActivities(i, 0);
             for(ResolveInfo ri:allApps) { // 필요한 앱만 거르기
-                if (ri.loadLabel(pm).equals("갤러리") || ri.loadLabel(pm).equals("카메라") || ri.loadLabel(pm).equals("Snapdragon 카메라") || ri.loadLabel(pm).equals("설정") || ri.loadLabel(pm).equals("MyBomSettings")){
+                if (ri.loadLabel(pm).equals("갤러리") || ri.loadLabel(pm).equals("카메라") ||
+                        ri.loadLabel(pm).equals("Snapdragon 카메라") || ri.loadLabel(pm).equals("설정") ||
+                        ri.loadLabel(pm).equals("MyBomSettings") || ri.loadLabel(pm).equals("시계")) {
                     AppInfo app = new AppInfo();
                     app.label = ri.loadLabel(pm);
                     app.packageName = ri.activityInfo.packageName;
