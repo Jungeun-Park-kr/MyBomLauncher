@@ -15,14 +15,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppsDrawer extends AppCompatActivity {
+public class AppsDrawerActivity extends AppCompatActivity {
+    /**
+     * 메뉴에서 앱 목록을 불러오기 위한 액티비티입니다.
+     * 원하는 앱만 필터링 가능함
+     */
     RAdapter radapter;
     // ArrayList<AppInfo> appsList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.apps_drawer);
+        setContentView(R.layout.activity_apps_drawer);
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.appList);
         radapter = new RAdapter(this);

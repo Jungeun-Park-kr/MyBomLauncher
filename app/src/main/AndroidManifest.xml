@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.mybomlauncher.AppsDrawer"
+        <activity android:name="com.example.mybomlauncher.AppsDrawerActivity"
             android:launchMode="singleTask">
         </activity>
     </application>
