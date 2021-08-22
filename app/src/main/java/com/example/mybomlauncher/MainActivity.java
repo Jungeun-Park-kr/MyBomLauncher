@@ -15,7 +15,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * 메인 액티비티 입니다.
+     * 주요 앱 4개와 메뉴 버튼이 있습니다.
+     */
     public static Context baseContext;
 
     @Override
